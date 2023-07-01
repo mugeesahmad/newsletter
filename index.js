@@ -10,7 +10,12 @@ app.use(express.urlencoded({ extended: false }));
 // Managing routes
 
 app.get('/', (req, res) => {
-  res.send('hello world from the news letter');
+  // res.send('hello world from the news letter');
+  res.json({
+    DB: process.env.DB,
+    SMTP_USER: process.env.SMTP_USER,
+    SMTP_PASS: process.env.SMTP_PASS,
+  });
 });
 
 app.use('/newsletter', require('./routes/newsletter'));
