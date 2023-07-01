@@ -11,10 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
   // res.send('hello world from the news letter');
-  res.send(
-    `hello
-    ${process.env.DB}`
-  );
+  res.send(`hello`);
 });
 
 app.use('/newsletter', require('./routes/newsletter'));
