@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
   // res.send('hello world from the news letter');
-  res.json({
+  res.send('hello', {
     DB: process.env.DB,
     SMTP_USER: process.env.SMTP_USER,
     SMTP_PASS: process.env.SMTP_PASS,
