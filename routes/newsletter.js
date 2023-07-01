@@ -28,7 +28,7 @@ router.post('/subscribe', (req, res) => {
       // await email.save();
       console.log(email);
       const output = `
-      <a href="localhost:3000/newsletter/verify?email=${email.email}&key=${email.uniqueID}">Unsubscribe</a>
+      <a href="https://crazy-peplum-colt.cyclic.app/newsletter/verify?email=${email.email}&key=${email.uniqueID}">Unsubscribe</a>
       `;
 
       let transporter = nodemailer.createTransport({
