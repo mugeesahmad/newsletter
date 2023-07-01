@@ -15,9 +15,8 @@ app.get('/', (req, res) => {
 
 app.use('/newsletter', require('./routes/newsletter'));
 
-mongoose.connect(process.env.DB).then(() => {
-  const port = process.env.PORT;
-  app.listen(port, () => {
-    console.log('server started on port', port);
-  });
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log('server started on port', port);
 });
+mongoose.connect(process.env.DB).then(() => {});
