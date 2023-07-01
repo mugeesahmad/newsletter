@@ -11,11 +11,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
   // res.send('hello world from the news letter');
-  res.send('hello', {
-    DB: process.env.DB,
-    SMTP_USER: process.env.SMTP_USER,
-    SMTP_PASS: process.env.SMTP_PASS,
-  });
+  res.send(
+    'hello',
+    process.env.DB,
+    process.env.SMTP_USER,
+    process.env.SMTP_PASS
+  );
 });
 
 app.use('/newsletter', require('./routes/newsletter'));
