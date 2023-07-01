@@ -9,6 +9,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // Managing routes
 
+app.get('/', (req, res) => {
+  res.send('hello world from the news letter');
+});
+
 app.use('/newsletter', require('./routes/newsletter'));
 
 mongoose.connect(process.env.DB).then(() => {
